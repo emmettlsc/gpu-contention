@@ -1,0 +1,40 @@
+past_work/
+
+build/
+*.o
+*.a
+
+# profiling 
+*.ncu-rep
+*.nsys-rep
+*.qdrep
+
+# large result files
+experiments/results/**/*.json
+experiments/results/**/*.csv
+
+# vids+imgs
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.png
+*.jpg
+*.jpeg
+
+# os+emacs
+.DS_Store
+*.swp
+*.swo
+*~
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# temp files
+*.tmp
+*.log
+notes.txt
