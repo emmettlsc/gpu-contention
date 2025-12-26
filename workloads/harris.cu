@@ -1,5 +1,20 @@
+/*
+ * harris corner detection kernel
+ *
+ * input: grayscale image (unsigned char*), width x height
+ * output: corner map (unsigned char*), 255 = corner, 0 = not corner
+ * characteristics: memory-bound, high bandwidth usage (~160 GB/s)
+ *
+ * harris corner detector finds points where image gradients change in multiple directions
+ * uses structure tensor (matrix of gradient products) and computes corner response
+ *
+ * to run solo: see workloads/examples/test_harris.cpp
+ */
+
 #include <cuda_runtime.h>
 #include <device_launch_parameters.h>
+
+// ===== compute harris response =====
 
 __global__ void harris_response_kernel(unsigned char* input, float* response,
                                       int width, int height, int block_size, int ksize, float k) {
@@ -61,6 +76,8 @@ __global__ void harris_response_kernel(unsigned char* input, float* response,
     response[y * width + x] = harris_resp;
 }
 
+// ===== threshold and non-max suppression =====
+
 __global__ void harris_threshold_kernel(float* response, unsigned char* output,
                                        int width, int height, float threshold) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
@@ -95,6 +112,8 @@ __global__ void harris_threshold_kernel(float* response, unsigned char* output,
     }
 }
 
+// ===== launch wrappers =====
+
 extern "C" void launch_harris_response_kernel(unsigned char* input, float* response,
                                              int width, int height, int block_size, int ksize, float k, cudaStream_t stream) {
     dim3 blockSize(16, 16);
@@ -110,6 +129,8 @@ extern "C" void launch_harris_threshold_kernel(float* response, unsigned char* o
                   (height + blockSize.y - 1) / blockSize.y);
     harris_threshold_kernel<<<gridSize, blockSize, 0, stream>>>(response, output, width, height, threshold);
 }
+
+// ===== full pipeline wrapper =====
 
 extern "C" void launch_harris_full_pipeline(unsigned char* d_input, unsigned char* d_output,
                                            float* d_temp_response, int width, int height,

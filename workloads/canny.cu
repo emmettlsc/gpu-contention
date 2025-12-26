@@ -1,6 +1,24 @@
+/*
+ * canny edge detection kernel
+ *
+ * input: grayscale image (unsigned char*), width x height
+ * output: edge-detected image (unsigned char*), same dimensions
+ * characteristics: memory-bound, high bandwidth usage (~180 GB/s)
+ *
+ * this is a multi-stage pipeline:
+ * 1. gaussian blur to reduce noise
+ * 2. sobel gradients to find edge directions
+ * 3. non-maximum suppression to thin edges
+ * 4. double threshold to classify strong/weak edges
+ *
+ * to run solo: see workloads/examples/test_canny.cpp
+ */
+
 #include <cuda_runtime.h>
 #include <device_launch_parameters.h>
 #include <math.h>
+
+// ===== stage 1: gaussian blur =====
 
 __global__ void gaussian_blur_kernel(unsigned char* input, float* output, int width, int height) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
@@ -32,6 +50,8 @@ __global__ void gaussian_blur_kernel(unsigned char* input, float* output, int wi
     output[y * width + x] = sum / kernel_sum;
 }
 
+// ===== stage 2: sobel gradients =====
+
 __global__ void sobel_kernel(float* input, float* grad_x, float* grad_y, int width, int height) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -55,6 +75,8 @@ __global__ void sobel_kernel(float* input, float* grad_x, float* grad_y, int wid
     grad_y[y * width + x] = gy;
 }
 
+// ===== stage 3: gradient magnitude and direction =====
+
 __global__ void gradient_magnitude_kernel(float* grad_x, float* grad_y, float* magnitude,
                                          float* direction, int width, int height) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
@@ -69,6 +91,8 @@ __global__ void gradient_magnitude_kernel(float* grad_x, float* grad_y, float* m
     magnitude[idx] = sqrtf(gx * gx + gy * gy);
     direction[idx] = atan2f(gy, gx);
 }
+
+// ===== stage 4: non-maximum suppression =====
 
 __global__ void non_maximum_suppression_kernel(float* magnitude, float* direction,
                                              float* suppressed, int width, int height) {
@@ -109,6 +133,8 @@ __global__ void non_maximum_suppression_kernel(float* magnitude, float* directio
         suppressed[idx] = 0.0f;
     }
 }
+
+// ===== stage 5: double threshold =====
 
 __global__ void double_threshold_kernel(float* input, unsigned char* output,
                                       int width, int height, float low_thresh, float high_thresh) {
@@ -170,6 +196,8 @@ extern "C" void launch_double_threshold_kernel(float* input, unsigned char* outp
                   (height + blockSize.y - 1) / blockSize.y);
     double_threshold_kernel<<<gridSize, blockSize, 0, stream>>>(input, output, width, height, low_thresh, high_thresh);
 }
+
+// ===== full pipeline wrapper =====
 
 extern "C" void launch_canny_full_pipeline(unsigned char* d_input, unsigned char* d_output,
                                           float* d_temp_buffers, int width, int height,
