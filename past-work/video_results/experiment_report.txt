@@ -1,0 +1,10 @@
+=== Video Processing Experiment Report ===
+
+Performance Summary:
+  adaptive: 105.3 FPS average
+  concurrent: 91.4 FPS average
+  sequential: 92.5 FPS average
+  Adaptive scheduler accuracy: 99.1%
+
+Experiment completed at: 1749826711161237652
+Total experiments: 27
