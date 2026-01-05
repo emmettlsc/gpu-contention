@@ -85,7 +85,10 @@ __global__ void conv2d_kernel(const float* input, float* output, int width, int 
 // ===== launch wrapper =====
 
 extern "C" void launch_conv2d_kernel(const float* d_input, float* d_output,
-                                     int width, int height, cudaStream_t stream) {
+                                     const float* d_kernel, int width, int height,
+                                     int kernel_size, cudaStream_t stream) {
+    // note: d_kernel and kernel_size are ignored - kernel uses hardcoded 5x5 gaussian
+    // this signature matches kernels.hpp for uniform workload pair interface
     dim3 blockSize(CONV_TILE_SIZE, CONV_TILE_SIZE);
     dim3 gridSize((width + CONV_TILE_SIZE - 1) / CONV_TILE_SIZE,
                   (height + CONV_TILE_SIZE - 1) / CONV_TILE_SIZE);
