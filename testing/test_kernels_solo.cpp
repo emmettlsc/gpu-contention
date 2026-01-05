@@ -1,5 +1,5 @@
 // sanity test for each solo kernel + metrics (execution time + validates functionality)
-#include "kernels.hpp"
+#include "../workloads/kernels.hpp"
 #include <cstdio>
 #include <cstdlib>
 
