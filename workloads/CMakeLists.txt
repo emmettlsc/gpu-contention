@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.18)
 project(KernelTests CUDA CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CUDA_ARCHITECTURES "70;75;86;89")
+set(CMAKE_CUDA_ARCHITECTURES "70;75;86;89") # this right??? TODO: change for other gpu archs... not finalized on what to test on yet
 
 find_package(OpenCV REQUIRED)
 find_package(CUDAToolkit REQUIRED)
@@ -12,8 +12,7 @@ find_package(CUDAToolkit REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(../past-work/include)
 
-# individual kernel test executables
-
+# all the individual kernel test executables r below w/ their .cu and .cpp files
 add_executable(test_canny
     examples/test_canny.cpp
     canny.cu
@@ -62,6 +61,3 @@ add_executable(test_compute
 )
 target_link_libraries(test_compute CUDA::cudart)
 
-message(STATUS "kernel test harnesses configured")
-message(STATUS "build: cd build && cmake .. && make")
-message(STATUS "generate test images: python3 examples/generate_test_image.py")
