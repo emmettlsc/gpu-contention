@@ -1,0 +1,14 @@
+ernel,avg_sm_throughput_pct,avg_dram_throughput_pct,registers_per_thread,shared_mem_per_block_bytes,avg_occupancy_pct,avg_l1_throughput_pct,avg_l2_throughput_pct,grid,block,bottleneck
+"conv2d_kernel(const float *, float *, int, int)",91.7,21.3,29,0,93.1,0.8,12.8,"(120, 68, 1)","(16, 16, 1)",compute-bound
+"double_threshold_kernel(float *, unsigned char *, int, int, float, float)",43.0,78.5,16,0,70.9,1.6,29.4,"(120, 68, 1)","(16, 16, 1)",memory-bound
+"gaussian_blur_kernel(unsigned char *, float *, int, int)",82.7,11.9,40,0,82.7,7.1,16.1,"(120, 68, 1)","(16, 16, 1)",compute-bound
+"gaussian_blur_uchar_kernel(unsigned char *, float *, int, int)",82.7,11.9,40,0,82.6,7.1,16.1,"(120, 68, 1)","(16, 16, 1)",compute-bound
+"gradient_magnitude_kernel(float *, float *, float *, float *, int, int)",43.8,84.9,24,0,79.7,2.1,39.5,"(120, 68, 1)","(16, 16, 1)",memory-bound
+"harris_response_kernel(unsigned char *, float *, int, int, int, int, float)",91.1,5.1,36,0,88.8,7.6,6.7,"(120, 68, 1)","(16, 16, 1)",compute-bound
+"harris_threshold_kernel(float *, unsigned char *, int, int, float)",49.6,47.0,16,0,74.7,4.5,25.7,"(120, 68, 1)","(16, 16, 1)",balanced
+"histogram_kernel(const unsigned char *, unsigned int *, int, int)",1.7,1.2,16,0,90.0,0.1,6.1,"(1024, 1, 1)","(256, 1, 1)",balanced
+"matmul_kernel(const float *, const float *, float *, int)",88.2,2.3,36,0,78.4,0.7,13.1,"(64, 64, 1)","(16, 16, 1)",compute-bound
+"non_maximum_suppression_kernel(float *, float *, float *, int, int)",85.0,26.3,36,0,78.7,0.9,11.1,"(120, 68, 1)","(16, 16, 1)",compute-bound
+"sobel_kernel(float *, float *, float *, int, int)",69.5,68.5,26,0,78.4,10.2,63.2,"(120, 68, 1)","(16, 16, 1)",balanced
+"synthetic_bandwidth_kernel(const float *, float *, int)",17.6,84.2,26,0,88.9,2.1,41.2,"(2048, 1, 1)","(256, 1, 1)",memory-bound
+"synthetic_compute_kernel(const float *, float *, int, int)",95.0,20.8,16,0,92.3,0.5,9.7,"(8100, 1, 1)","(256, 1, 1)",compute-bound
