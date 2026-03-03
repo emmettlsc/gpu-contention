@@ -1,5 +1,3 @@
-// GPU resource monitoring
-
 #pragma once
 #include <nvml.h>
 #include <cuda_runtime.h>
