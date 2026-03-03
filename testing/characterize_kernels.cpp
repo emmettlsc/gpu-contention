@@ -9,8 +9,8 @@
 // ->runs each kernel 3 times, no nvml (designed to be wrapped by ncu)
 // use with: experiments/scripts/run_ncu_characterization.sh test_image.jpg
 
-#include "../workloads/kernels.hpp"
-#include "../past-work/include/gpu_monitor.hpp"
+#include "kernels.hpp"
+#include "gpu_monitor.hpp"
 #include <cuda_runtime.h>
 #include <opencv2/opencv.hpp>
 #include <cstdio>
