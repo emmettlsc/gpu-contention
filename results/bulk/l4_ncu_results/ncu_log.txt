@@ -1,0 +1,56 @@
+=== kernel characterization (ncu mode: 3 runs per kernel) ===
+
+loaded image: ../../build/test_image.jpg (1920x1280)
+
+gpu: L4
+compute capability: 8.9
+sm count: 58
+max theoretical bandwidth: 500.0 GB/s
+
+ncu mode: 3 runs per kernel, no nvml sampling
+ncu will profile each kernel launch with hardware counters
+
+kernel                                   |       time |  sm_util | mem_util |    arith_int | bottleneck     
+----------------------------------------+------------+----------+----------+--------------+-----------------
+// image processing kernels
+  [0 nvml samples over 2012.1 ms, 3 runs]
+canny_1280x720                           |  670.694 ms |    0.0% |    0.0% |       2.00 | memory-bound   
+  [0 nvml samples over 2029.9 ms, 3 runs]
+canny_1920x1080                          |  676.621 ms |    0.0% |    0.0% |       2.00 | memory-bound   
+  [0 nvml samples over 797.1 ms, 3 runs]
+harris_1280x720                          |  265.707 ms |    0.0% |    0.0% |       3.75 | memory-bound   
+  [0 nvml samples over 798.7 ms, 3 runs]
+harris_1920x1080                         |  266.235 ms |    0.0% |    0.0% |       3.75 | memory-bound   
+  [0 nvml samples over 399.7 ms, 3 runs]
+gaussian_blur_1280x720                   |  133.226 ms |    0.0% |    0.0% |      10.00 | compute-bound  
+  [0 nvml samples over 394.5 ms, 3 runs]
+gaussian_blur_1920x1080                  |  131.510 ms |    0.0% |    0.0% |      10.00 | compute-bound  
+
+// compute kernels
+  [0 nvml samples over 397.3 ms, 3 runs]
+matmul_256x256                           |  132.446 ms |    0.0% |    0.0% |      42.67 | compute-bound  
+  [0 nvml samples over 398.7 ms, 3 runs]
+matmul_512x512                           |  132.887 ms |    0.0% |    0.0% |      85.33 | compute-bound  
+  [0 nvml samples over 471.7 ms, 3 runs]
+matmul_1024x1024                         |  157.225 ms |    0.0% |    0.0% |     170.67 | compute-bound  
+  [0 nvml samples over 398.2 ms, 3 runs]
+conv2d_1280x720                          |  132.742 ms |    0.0% |    0.0% |       2.25 | memory-bound   
+  [0 nvml samples over 402.0 ms, 3 runs]
+conv2d_1920x1080                         |  133.996 ms |    0.0% |    0.0% |       2.25 | memory-bound   
+  [0 nvml samples over 401.5 ms, 3 runs]
+histogram_1280x720                       |  133.818 ms |    0.0% |    0.0% |       0.00 | atomic-bound   
+  [0 nvml samples over 416.1 ms, 3 runs]
+histogram_1920x1080                      |  138.695 ms |    0.0% |    0.0% |       0.00 | atomic-bound   
+
+// synthetic stress tests
+  [0 nvml samples over 401.0 ms, 3 runs]
+  [achieved bandwidth: 0.1 GB/s]
+synthetic_bw_2073600_elems               |  133.651 ms |    0.0% |    0.0% |       0.00 | memory-bound   
+  [0 nvml samples over 402.2 ms, 3 runs]
+synthetic_compute_2073600_50iter         |  134.061 ms |    0.0% |    0.0% |     100.00 | compute-bound  
+  [0 nvml samples over 405.0 ms, 3 runs]
+synthetic_compute_2073600_100iter        |  135.000 ms |    0.0% |    0.0% |     200.00 | compute-bound  
+  [0 nvml samples over 407.1 ms, 3 runs]
+synthetic_compute_2073600_200iter        |  135.692 ms |    0.0% |    0.0% |     400.00 | compute-bound  
+
+=== characterization complete ===
