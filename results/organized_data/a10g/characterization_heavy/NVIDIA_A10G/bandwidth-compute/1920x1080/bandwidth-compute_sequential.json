@@ -1,0 +1,18 @@
+{
+  "gpu_name": "A10G",
+  "workload": "bandwidth-compute",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 5362.4321,
+  "fps": 186.4825,
+  "avg_time_per_frame_ms": 5.3624,
+  "avg_sm_utilization_pct": 89.3070,
+  "avg_memory_utilization_pct": 3.1377,
+  "avg_memory_controller_utilization_pct": 70.9660,
+  "avg_temperature_c": 48.2130,
+  "avg_bandwidth_used_gbs": 427.1760,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

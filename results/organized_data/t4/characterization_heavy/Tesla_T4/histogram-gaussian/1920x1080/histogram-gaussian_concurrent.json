@@ -1,0 +1,18 @@
+{
+  "gpu_name": "Tesla T4",
+  "workload": "histogram-gaussian",
+  "strategy": "concurrent",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 41292.3750,
+  "fps": 24.2175,
+  "avg_time_per_frame_ms": 41.2924,
+  "avg_sm_utilization_pct": 96.6440,
+  "avg_memory_utilization_pct": 3.7187,
+  "avg_memory_controller_utilization_pct": 12.0890,
+  "avg_temperature_c": 48.0000,
+  "avg_bandwidth_used_gbs": 38.6848,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

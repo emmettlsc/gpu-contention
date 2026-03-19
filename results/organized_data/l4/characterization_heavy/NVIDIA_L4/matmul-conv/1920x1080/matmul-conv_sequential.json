@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "matmul-conv",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 73253.1172,
+  "fps": 13.6513,
+  "avg_time_per_frame_ms": 73.2531,
+  "avg_sm_utilization_pct": 99.6760,
+  "avg_memory_utilization_pct": 3.0168,
+  "avg_memory_controller_utilization_pct": 0.0000,
+  "avg_temperature_c": 81.9110,
+  "avg_bandwidth_used_gbs": 209.4168,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

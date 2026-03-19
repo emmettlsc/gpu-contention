@@ -1,0 +1,18 @@
+{
+  "gpu_name": "A10G",
+  "workload": "canny-harris",
+  "strategy": "concurrent",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 18762.6797,
+  "fps": 53.2973,
+  "avg_time_per_frame_ms": 18.7627,
+  "avg_sm_utilization_pct": 97.9340,
+  "avg_memory_utilization_pct": 3.2681,
+  "avg_memory_controller_utilization_pct": 79.9110,
+  "avg_temperature_c": 54.6410,
+  "avg_bandwidth_used_gbs": 479.4660,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

@@ -1,0 +1,18 @@
+{
+  "gpu_name": "Tesla T4",
+  "workload": "canny-harris",
+  "strategy": "concurrent",
+  "resolution": "1280x720",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 27414.5117,
+  "fps": 36.4770,
+  "avg_time_per_frame_ms": 27.4145,
+  "avg_sm_utilization_pct": 93.9240,
+  "avg_memory_utilization_pct": 3.7708,
+  "avg_memory_controller_utilization_pct": 53.7680,
+  "avg_temperature_c": 43.8240,
+  "avg_bandwidth_used_gbs": 172.0560,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

@@ -1,0 +1,18 @@
+{
+  "gpu_name": "RTX 3060 Laptop GPU",
+  "workload": "small-matmul-canny",
+  "strategy": "sequential",
+  "resolution": "1280x720",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 16233.1025,
+  "fps": 61.6025,
+  "avg_time_per_frame_ms": 16.2331,
+  "avg_sm_utilization_pct": 94.2760,
+  "avg_memory_utilization_pct": 7.8237,
+  "avg_memory_controller_utilization_pct": 100.0000,
+  "avg_temperature_c": 66.9550,
+  "avg_bandwidth_used_gbs": 336.0000,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "small-matmul-canny",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 16130.4053,
+  "fps": 61.9947,
+  "avg_time_per_frame_ms": 16.1304,
+  "avg_sm_utilization_pct": 96.5660,
+  "avg_memory_utilization_pct": 3.0862,
+  "avg_memory_controller_utilization_pct": 47.7660,
+  "avg_temperature_c": 80.4220,
+  "avg_bandwidth_used_gbs": 143.5680,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

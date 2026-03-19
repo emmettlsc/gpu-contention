@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "histogram-gaussian",
+  "strategy": "concurrent",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 30610.2461,
+  "fps": 32.6688,
+  "avg_time_per_frame_ms": 30.6102,
+  "avg_sm_utilization_pct": 98.8810,
+  "avg_memory_utilization_pct": 2.9646,
+  "avg_memory_controller_utilization_pct": 0.0000,
+  "avg_temperature_c": 79.8740,
+  "avg_bandwidth_used_gbs": 207.9878,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

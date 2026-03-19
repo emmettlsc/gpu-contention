@@ -1,0 +1,18 @@
+{
+  "gpu_name": "A10G",
+  "workload": "small-matmul-canny",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 15333.2637,
+  "fps": 65.2177,
+  "avg_time_per_frame_ms": 15.3333,
+  "avg_sm_utilization_pct": 96.4550,
+  "avg_memory_utilization_pct": 3.2333,
+  "avg_memory_controller_utilization_pct": 81.3520,
+  "avg_temperature_c": 53.8250,
+  "avg_bandwidth_used_gbs": 488.1120,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

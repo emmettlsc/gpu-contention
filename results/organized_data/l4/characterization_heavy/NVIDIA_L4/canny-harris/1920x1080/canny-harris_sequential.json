@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "canny-harris",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 23327.8262,
+  "fps": 42.8673,
+  "avg_time_per_frame_ms": 23.3278,
+  "avg_sm_utilization_pct": 97.8750,
+  "avg_memory_utilization_pct": 3.1209,
+  "avg_memory_controller_utilization_pct": 49.3060,
+  "avg_temperature_c": 49.6210,
+  "avg_bandwidth_used_gbs": 148.0980,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

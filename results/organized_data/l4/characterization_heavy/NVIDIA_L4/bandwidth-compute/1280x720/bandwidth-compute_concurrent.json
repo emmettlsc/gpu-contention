@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "bandwidth-compute",
+  "strategy": "concurrent",
+  "resolution": "1280x720",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 2660.7576,
+  "fps": 375.8328,
+  "avg_time_per_frame_ms": 2.6608,
+  "avg_sm_utilization_pct": 90.0000,
+  "avg_memory_utilization_pct": 2.9386,
+  "avg_memory_controller_utilization_pct": 0.0000,
+  "avg_temperature_c": 84.0000,
+  "avg_bandwidth_used_gbs": 192.0000,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

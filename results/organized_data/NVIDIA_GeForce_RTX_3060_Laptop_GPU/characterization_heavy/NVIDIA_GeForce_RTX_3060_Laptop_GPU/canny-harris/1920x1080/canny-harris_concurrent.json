@@ -1,0 +1,18 @@
+{
+  "gpu_name": "RTX 3060 Laptop GPU",
+  "workload": "canny-harris",
+  "strategy": "concurrent",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 46197.5469,
+  "fps": 21.6462,
+  "avg_time_per_frame_ms": 46.1975,
+  "avg_sm_utilization_pct": 99.0000,
+  "avg_memory_utilization_pct": 8.3446,
+  "avg_memory_controller_utilization_pct": 100.0000,
+  "avg_temperature_c": 68.9090,
+  "avg_bandwidth_used_gbs": 336.0000,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

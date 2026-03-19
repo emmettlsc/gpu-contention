@@ -1,0 +1,18 @@
+{
+  "gpu_name": "A10G",
+  "workload": "histogram-gaussian",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 33849.1367,
+  "fps": 29.5429,
+  "avg_time_per_frame_ms": 33.8491,
+  "avg_sm_utilization_pct": 98.3380,
+  "avg_memory_utilization_pct": 3.1117,
+  "avg_memory_controller_utilization_pct": 6.9540,
+  "avg_temperature_c": 41.8840,
+  "avg_bandwidth_used_gbs": 41.9784,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

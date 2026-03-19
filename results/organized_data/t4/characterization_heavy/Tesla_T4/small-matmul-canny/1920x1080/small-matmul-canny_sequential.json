@@ -1,0 +1,18 @@
+{
+  "gpu_name": "Tesla T4",
+  "workload": "small-matmul-canny",
+  "strategy": "sequential",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 39423.6367,
+  "fps": 25.3655,
+  "avg_time_per_frame_ms": 39.4236,
+  "avg_sm_utilization_pct": 95.3520,
+  "avg_memory_utilization_pct": 3.9009,
+  "avg_memory_controller_utilization_pct": 69.6390,
+  "avg_temperature_c": 50.9990,
+  "avg_bandwidth_used_gbs": 222.8448,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

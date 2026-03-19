@@ -1,0 +1,18 @@
+{
+  "gpu_name": "L4",
+  "workload": "histogram-gaussian",
+  "strategy": "sequential",
+  "resolution": "1280x720",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 14074.9102,
+  "fps": 71.0484,
+  "avg_time_per_frame_ms": 14.0749,
+  "avg_sm_utilization_pct": 96.4740,
+  "avg_memory_utilization_pct": 2.9299,
+  "avg_memory_controller_utilization_pct": 0.0000,
+  "avg_temperature_c": 79.4330,
+  "avg_bandwidth_used_gbs": 203.6547,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}

@@ -1,0 +1,18 @@
+{
+  "gpu_name": "Tesla T4",
+  "workload": "matmul-conv",
+  "strategy": "concurrent",
+  "resolution": "1920x1080",
+  "iterations_per_frame": 50,
+  "total_frames": 1000,
+  "total_time_ms": 163782.7656,
+  "fps": 6.1056,
+  "avg_time_per_frame_ms": 163.7828,
+  "avg_sm_utilization_pct": 98.9500,
+  "avg_memory_utilization_pct": 3.7968,
+  "avg_memory_controller_utilization_pct": 26.3770,
+  "avg_temperature_c": 51.9920,
+  "avg_bandwidth_used_gbs": 84.4061,
+  "sequential_decisions": 0,
+  "concurrent_decisions": 0
+}
